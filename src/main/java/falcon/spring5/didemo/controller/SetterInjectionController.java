@@ -2,6 +2,7 @@ package falcon.spring5.didemo.controller;
 
 import falcon.spring5.didemo.service.GreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -18,6 +19,7 @@ public class SetterInjectionController {
     }
 
     @Autowired
+    @Qualifier("setterGreetingServiceImpl")
     public void setGreetingService(GreetingService greetingService) {
         this.greetingService = greetingService;
     }
