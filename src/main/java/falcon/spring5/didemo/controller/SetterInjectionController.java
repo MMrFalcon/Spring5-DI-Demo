@@ -1,6 +1,7 @@
 package falcon.spring5.didemo.controller;
 
 import falcon.spring5.didemo.service.GreetingService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -12,10 +13,11 @@ public class SetterInjectionController {
 
     private GreetingService greetingService;
 
-    String getText(){
+    public String getText(){
         return greetingService.getInscription();
     }
 
+    @Autowired
     public void setGreetingService(GreetingService greetingService) {
         this.greetingService = greetingService;
     }

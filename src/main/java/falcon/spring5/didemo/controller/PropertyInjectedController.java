@@ -1,6 +1,7 @@
 package falcon.spring5.didemo.controller;
 
 import falcon.spring5.didemo.service.GreetingServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -8,9 +9,11 @@ import org.springframework.stereotype.Controller;
  */
 @Controller
 public class PropertyInjectedController {
+
+    @Autowired
     public GreetingServiceImpl greetingServiceImpl;
 
-    String getText(){
+    public String getText(){
         return greetingServiceImpl.getInscription();
     }
 }

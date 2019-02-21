@@ -11,7 +11,7 @@ public class ConstructorInjectionController {
         this.greetingService = greetingService;
     }
 
-    String getText(){
+    public String getText(){
         return greetingService.getInscription();
     }
 }

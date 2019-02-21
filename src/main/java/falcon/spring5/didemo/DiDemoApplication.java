@@ -1,5 +1,8 @@
 package falcon.spring5.didemo;
 
+import falcon.spring5.didemo.controller.ConstructorInjectionController;
+import falcon.spring5.didemo.controller.PropertyInjectedController;
+import falcon.spring5.didemo.controller.SetterInjectionController;
 import falcon.spring5.didemo.controller.TestController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,6 +20,10 @@ public class DiDemoApplication {
         TestController controller = (TestController) applicationContext.getBean("testController");
 
         controller.getInscription();
+
+        System.out.println(applicationContext.getBean(PropertyInjectedController.class).getText());
+        System.out.println(applicationContext.getBean(SetterInjectionController.class).getText());
+        System.out.println(applicationContext.getBean(ConstructorInjectionController.class).getText());
     }
 
 }
