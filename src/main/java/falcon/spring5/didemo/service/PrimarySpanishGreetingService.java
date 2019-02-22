@@ -4,12 +4,12 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-@Service
 @Primary
-@Profile("en")
-public class PrimaryGreetingService implements GreetingService {
+@Service
+@Profile({"es", "default"})
+public class PrimarySpanishGreetingService implements GreetingService {
     @Override
     public String getInscription() {
-        return "I'm a primary Service!";
+        return "¡Soy un servicio primario!";
     }
 }
