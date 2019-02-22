@@ -1,6 +1,6 @@
 # Spring5-DI-Dem
 
-In this example of Spring 5 application following things was contained:
+This example of Spring 5 application contains:
 
   - Types of injection
   - Simple JUnit tests
