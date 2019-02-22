@@ -15,7 +15,7 @@ public class DiDemoApplication {
        ApplicationContext applicationContext = SpringApplication.run(DiDemoApplication.class, args);
 
         /**
-         * With @Controller class TestController  has created Bean named 'testController'
+         * With @Controller - class TestController  has created Bean named 'testController'
          */
         PrimaryTest controller = (PrimaryTest) applicationContext.getBean("primaryTest");
 
