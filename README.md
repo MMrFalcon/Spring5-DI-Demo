@@ -10,8 +10,8 @@ In this example of Spring 5 application following things was contained:
   - Working with Application Context
   
   # Run application with maven:
-  '''sh
+ ```
   ./mvnw spring-boot:run
-  '''
+```
   
   Application contains only Spring core.
