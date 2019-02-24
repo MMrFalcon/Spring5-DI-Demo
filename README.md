@@ -7,6 +7,7 @@ This example of Spring 5 application contains:
   - Injection controll provided by @Primary and @Qualifies annotations
   - Simple examples of Profiles provided by Spring
   - Bean Life Cycles
+  - Example of Bean Factory use
   - Working with Application Context
   
   # Run application with maven:
