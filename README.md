@@ -9,6 +9,7 @@ This example of Spring 5 application contains:
   - Bean Life Cycles
   - Example of Bean Factory use
   - Working with Application Context
+  - Example of External Properties use
   
   # Run application with maven:
  ```
