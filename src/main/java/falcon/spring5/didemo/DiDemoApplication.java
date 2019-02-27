@@ -4,6 +4,7 @@ import falcon.spring5.didemo.controller.ConstructorInjectionController;
 import falcon.spring5.didemo.controller.PrimaryTest;
 import falcon.spring5.didemo.controller.PropertyInjectedController;
 import falcon.spring5.didemo.controller.SetterInjectionController;
+import falcon.spring5.didemo.examplebeans.Datasource;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -19,10 +20,20 @@ public class DiDemoApplication {
          */
         PrimaryTest controller = (PrimaryTest) applicationContext.getBean("primaryTest");
 
+        System.out.println("\n***** Injecting  - DEMO *****\n");
         System.out.println(controller.getInscription());
         System.out.println(applicationContext.getBean(PropertyInjectedController.class).getText());
         System.out.println(applicationContext.getBean(SetterInjectionController.class).getText());
         System.out.println(applicationContext.getBean(ConstructorInjectionController.class).getText());
+
+        System.out.println("\n***** External Properties - DEMO ***** \n");
+
+        Datasource datasource = applicationContext.getBean(Datasource.class);
+
+        System.out.println(datasource.getDatabaseName());
+        System.out.println(datasource.getDbUrl());
+        System.out.println(datasource.getUserName());
+        System.out.println(datasource.getPassword());
     }
 
 }
