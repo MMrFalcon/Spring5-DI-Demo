@@ -1,11 +1,13 @@
 package falcon.spring5.didemo.configuration;
 
 import falcon.spring5.didemo.examplebeans.Datasource;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.core.env.Environment;
 
 /**
  * Creation of Beans for Datasource
@@ -14,6 +16,8 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 @Configuration
 @PropertySource("classpath:datasource.properties")
 public class PropertyConfig {
+
+    private final Environment environment;
 
     @Value("${falcon.databaseName}")
     String databaseName;
@@ -26,6 +30,11 @@ public class PropertyConfig {
 
     @Value("${falcon.password}")
     String password;
+
+    @Autowired
+    public PropertyConfig(Environment environment) {
+        this.environment = environment;
+    }
 
     /**
      * Allows to wire up by 'value'
@@ -45,7 +54,7 @@ public class PropertyConfig {
         datasource.setDatabaseName(this.databaseName);
         datasource.setDbUrl(this.dbUrl);
         datasource.setUserName(this.userName);
-        datasource.setPassword(this.password);
+        datasource.setPassword(environment.getProperty("PASSWORD"));
 
         return  datasource;
     }
