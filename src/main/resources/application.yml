@@ -1,0 +1,4 @@
+falcon:
+  example:
+    key: Key for app
+    value: Value for app

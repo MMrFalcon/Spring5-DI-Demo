@@ -5,6 +5,7 @@ import falcon.spring5.didemo.controller.PrimaryTest;
 import falcon.spring5.didemo.controller.PropertyInjectedController;
 import falcon.spring5.didemo.controller.SetterInjectionController;
 import falcon.spring5.didemo.examplebeans.Datasource;
+import falcon.spring5.didemo.examplebeans.YmlDatasource;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -34,6 +35,12 @@ public class DiDemoApplication {
         System.out.println(datasource.getDbUrl());
         System.out.println(datasource.getUserName());
         System.out.println(datasource.getPassword());
+
+        YmlDatasource ymlDatasource = applicationContext.getBean(YmlDatasource.class);
+
+        System.out.println("\n***** Yml Properties *****\n");
+        System.out.println(ymlDatasource.getKey());
+        System.out.println(ymlDatasource.getValue());
     }
 
 }

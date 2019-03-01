@@ -1,0 +1,37 @@
+# Setting up property and adding value
+name: Falcon
+
+# Setting up List
+names:
+  - Falcon
+  - Geralt
+  - Paul
+
+hash_sign: "#"
+
+# Structures
+
+book:
+    author: Some Author
+    publisher: Some Publisher
+
+# making boolean type by yes, True, true
+truth: yes
+
+another_truth: True
+
+# String value
+string_val: "This is string value"
+
+# Reading new lines by pipe example '|"
+include_new_lines: |
+  some text here
+  some text here
+  more text here
+
+# Ignoring new lines by '>'
+ignore_new_lines: >
+  only one
+  Line
+  String
+
