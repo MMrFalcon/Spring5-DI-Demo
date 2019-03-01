@@ -5,6 +5,7 @@ import falcon.spring5.didemo.controller.PrimaryTest;
 import falcon.spring5.didemo.controller.PropertyInjectedController;
 import falcon.spring5.didemo.controller.SetterInjectionController;
 import falcon.spring5.didemo.examplebeans.Datasource;
+import falcon.spring5.didemo.examplebeans.DefaultPropetiesData;
 import falcon.spring5.didemo.examplebeans.YmlDatasource;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -41,6 +42,13 @@ public class DiDemoApplication {
         System.out.println("\n***** Yml Properties *****\n");
         System.out.println(ymlDatasource.getKey());
         System.out.println(ymlDatasource.getValue());
+
+        DefaultPropetiesData defaultPropetiesData = applicationContext.getBean(DefaultPropetiesData.class);
+
+        System.out.println("\n***** Default properties from application.properties - working with profiles *****\n");
+
+        System.out.println("Jacob overridden by application-pl.properties file = " + defaultPropetiesData.getName());
+        System.out.println(defaultPropetiesData.getEmail());
     }
 
 }

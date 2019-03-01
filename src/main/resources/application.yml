@@ -2,3 +2,11 @@ falcon:
   example:
     key: Key for app
     value: Value for app
+
+# New file
+---
+spring:
+  profiles: pl
+falcon:
+  example:
+    key: Key for app in PL
